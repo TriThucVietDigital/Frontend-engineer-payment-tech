@@ -96,6 +96,7 @@ export function CheckoutForm({ totalPrice, productName, quantity, productId, sto
       // Platform fee: 0.00001 Pi (không hiển thị cho người dùng)
       const PLATFORM_FEE = 0.00001
       const totalWithFee = totalPrice + PLATFORM_FEE
+    
       // Standard transaction logging (Security-first approach)
       console.log(`[Payment] Initiating transaction for Order #${generatedOrderId}`);
       
