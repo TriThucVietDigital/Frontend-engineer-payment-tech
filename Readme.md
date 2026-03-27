@@ -41,3 +41,10 @@ Code Reference: See src/features/wallet/hooks/useLedgerSync.ts.
 3. Transaction State Machine
 
 Payment flows are managed using a strict State Machine pattern (IDLE -> VALIDATING -> PROCESSING -> SUCCESS/FAIL) to prevent "Double-Tap" transactions and handle network interruptions gracefully.
+
+/src
+  /features
+    /wallet      # Ledger display, Balance management, Transaction History
+    /payment     # Payment flows, QR logic, Input validation
+  /hooks         # Custom hooks for WebSocket & Ledger sync
+  /utils         # High-precision formatting & calculation tools
