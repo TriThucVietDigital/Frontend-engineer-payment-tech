@@ -42,9 +42,9 @@ Code Reference: See src/features/wallet/hooks/useLedgerSync.ts.
 
 Payment flows are managed using a strict State Machine pattern (IDLE -> VALIDATING -> PROCESSING -> SUCCESS/FAIL) to prevent "Double-Tap" transactions and handle network interruptions gracefully.
 
-/src
-  /features
-    /wallet      # Ledger display, Balance management, Transaction History
-    /payment     # Payment flows, QR logic, Input validation
-  /hooks         # Custom hooks for WebSocket & Ledger sync
-  /utils         # High-precision formatting & calculation tools
+🔒 Security Awareness
+This project demonstrates a frontend that is "RLS-Aware." It ensures that:
+
+Sensitive financial views are conditionally rendered based on verified JWT claims.
+
+Data masking is applied by default to sensitive balances during "Processing" states.
