@@ -96,18 +96,11 @@ export function CheckoutForm({ totalPrice, productName, quantity, productId, sto
       // Platform fee: 0.00001 Pi (không hiển thị cho người dùng)
       const PLATFORM_FEE = 0.00001
       const totalWithFee = totalPrice + PLATFORM_FEE
-
-      console.log("💰 Initiating Pi payment...")
-      console.log("📱 App ID:", PI_APP_CONFIG.APP_ID)
-      console.log("🔑 API Key:", PI_APP_CONFIG.API_KEY)
-      console.log("🌐 Official Domain:", PI_APP_CONFIG.OFFICIAL_DOMAIN)
-      console.log("💳 Wallet Address (Recipient):", PI_APP_CONFIG.WALLET_ADDRESS)
-      console.log("💵 Product Amount:", totalPrice, "Pi")
-      console.log("🏪 Platform Fee:", PLATFORM_FEE, "Pi (internal)")
-      console.log("💰 Total Transaction:", totalWithFee, "Pi")
-      console.log("📝 Order ID:", generatedOrderId)
-      console.log("🔧 Sandbox Mode:", true, "(TESTNET)")
-      console.log("🔐 User Access Token:", piAccessToken ? "✓ Present" : "✗ Missing")
+      // Standard transaction logging (Security-first approach)
+      console.log(`[Payment] Initiating transaction for Order #${generatedOrderId}`);
+      
+      // In production, sensitive configs like API_KEY and Tokens 
+      // are handled strictly on the server side or hidden from logs.
 
       window.Pi.createPayment(
         {
